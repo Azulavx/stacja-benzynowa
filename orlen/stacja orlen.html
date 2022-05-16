@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STACJA PALIW</title>
+    <link rel="stylesheet" href="css orlen.css">
+</head>
+
+<body> 
+        <h1>Witamy na stacji ORLEN</h1>
+
+       <div>
+           <input type="radio" id="benzyna" name="marenka" value="litry"> 
+           <label for="benzyna">benzyna</label>
+           <input type="text" id="cenazabenzyne"> 
+       </div>
+       <div>
+           <input type="radio" id="ropa" name="marenka" value="litry"> 
+           <label for="ropa">ropa</label>
+           <input type="text" id="cenazarope">
+       </div>
+       <div>
+           <input type="text" id="litry">
+           <button id="oblicz" onclick="oblicz()">oblicz</button>
+       </div>
+       <div>
+           <p id="cena"></p>
+       </div>
+       <script>
+           function oblicz(){
+               let sprawdzb = document.getElementById("benzyna").checked;
+               let sprawdzr = document.getElementById("ropa").checked;
+               var litry = document.getElementById("litry").value;
+               var benzyna = document.getElementById("cenazabenzyne").value;
+               var ropa = document.getElementById("cenazarope").value;
+               if (sprawdzb == true){
+                   let cena = benzyna * litry;
+                   document.getElementById("cena").innerHTML = "cena wynosi " + cena + " zł";
+               }
+               else if (sprawdzr == true){
+                   let cena = ropa * litry;
+                   document.getElementById("cena").innerHTML = "cena wynosi " + cena + " zł";
+               }
+           }
+       </script>
+
+</body>
+
+</html>
